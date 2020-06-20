@@ -1,0 +1,24 @@
+{
+  "name": "promo-migrations",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/felipewww/promo-migrations.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/felipewww/promo-migrations/issues"
+  },
+  "homepage": "https://github.com/felipewww/promo-migrations#readme",
+  "dependencies": {
+    "faker-br": "^0.2.7",
+    "knex": "^0.20.15",
+    "mysql2": "^2.1.0"
+  }
+}
