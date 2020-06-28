@@ -1,7 +1,7 @@
 
 exports.up = function(knex) {
     return knex.schema
-      .createTable('sale_discount_at_unit', function (table) {
+      .createTable('sale_discount_at_unity', function (table) {
           table.integer('sale_id')
                   .unique()
                   .unsigned()
@@ -12,12 +12,12 @@ exports.up = function(knex) {
                   .onDelete('CASCADE')
 
             table.integer('discount');
-            table.integer('at_unit');
+            table.integer('at_unity');
 
             table.timestamps(true, true);
       })
 };
 
 exports.down = function(knex) {
-    return knex.schema.dropTable("sale_discount_at_unit")
+    return knex.schema.dropTable("sale_discount_at_unity")
 };
