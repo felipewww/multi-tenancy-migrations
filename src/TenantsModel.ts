@@ -18,15 +18,15 @@ export class TenantsModel {
                         port: 3306
                     }
                 },
-                {
-                    connection: {
-                        host : 'paylite-db',
-                        user : 'root',
-                        password : 'secret',
-                        database : 'onix',
-                        port: 3306
-                    }
-                }
+                // {
+                //     connection: {
+                //         host : 'paylite-db',
+                //         user : 'root',
+                //         password : 'secret',
+                //         database : 'onix',
+                //         port: 3306
+                //     }
+                // }
             ])
         })
     }
