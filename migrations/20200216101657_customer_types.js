@@ -4,6 +4,7 @@ exports.up = function(knex) {
     .createTable('customer_types', function (table) {
       table.increments('id');
       table.string('title', 45).notNullable();
+      table.text('icon_src').notNullable();
     })
 };
 
