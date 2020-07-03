@@ -1,7 +1,7 @@
 
 exports.up = function(knex) {
   return knex.schema
-    .createTable('guestcheck_product', function (table) {
+    .createTable('guestcheck_has_product', function (table) {
       table.boolean('status');
 
       table.decimal('price').nullable();
@@ -12,7 +12,7 @@ exports.up = function(knex) {
         .references('id')
         .inTable('products')
         .notNullable()
-        .onDelete('CASCADE')
+        .onDelete('RESTRICT')
 
       table.integer('guestcheck_id')
         .unsigned()
@@ -20,7 +20,7 @@ exports.up = function(knex) {
         .references('id')
         .inTable('guestchecks')
         .notNullable()
-        .onDelete('CASCADE')
+        .onDelete('RESTRICT')
 
       table.primary(['product_id', 'guestcheck_id']);
     })
@@ -29,5 +29,5 @@ exports.up = function(knex) {
 
 exports.down = function(knex) {
   return knex.schema
-    .dropTable("guestcheck_product")
+    .dropTable("guestcheck_has_product")
 };

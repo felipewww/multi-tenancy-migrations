@@ -8,13 +8,13 @@ exports.up = function(knex) {
       table.string('username', 45).notNullable();
       table.text('password').notNullable();
 
-      table.integer('users_permissions_group_id')
+      table.integer('permissions_group_id')
         .unsigned()
         .index()
         .references('id')
-        .inTable('users_permissions_groups')
-        .nullable()
-        .onDelete('CASCADE')
+        .inTable('permissions_groups')
+        // .nullable()
+        .onDelete('RESTRICT')
     })
 };
 

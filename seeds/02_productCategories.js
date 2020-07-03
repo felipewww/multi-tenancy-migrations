@@ -5,9 +5,9 @@ exports.seed = function(knex) {
     .then(function () {
       // Inserts seed entries
       return knex('product_categories').insert([
-        {id: 1, title: 'comidas'},
-        {id: 2, title: 'bebidas'},
-        {id: 3, title: 'serviços'}
+        {id: 1, title: 'Comidas'},
+        {id: 2, title: 'Bebidas'},
+        {id: 3, title: 'Serviços'}
       ]);
     });
 };
