@@ -1,30 +1,32 @@
-import {Arguments} from "yargs";
-import {Up} from "./Up";
-import {Down} from "./Down";
 import {Runner} from "../Runner";
+import yargs from "yargs";
 import {RunnerAction} from "../RunnerAction";
+import {Up} from "../Seeders/Up";
 import {ITenantSettings} from "../TenantsModel";
 
-export class Migrations extends Runner {
+export const seedsOrdered = [
+    'productCategories.js',
+    'products.js',
+    'modules.js',
+    'permissions.js',
+    'permissions_groups.js',
+    'permission_into_group.js',
+    'users.js',
+    'user_has_module.js',
+];
 
-    async handle(argv: Arguments<any>): Promise<void> {
+export class Seeds extends Runner {
+    async handle(argv: yargs.Arguments<any>): Promise<void> {
         let runnerAction: RunnerAction;
-
         const tenants: Array<ITenantSettings> = await this.model.all();
 
         switch (argv.action) {
             case 'up':
-                runnerAction = new Up(argv.seed);
+                runnerAction = new Up();
                 break;
 
             case 'down':
-                if (process.env.APP_ENV != 'dev' && process.env.APP_ENV != 'hml') {
-                    console.log("Can't run DOWN for production. Please run it's command manually for a specific database or create your own script!".red.bold)
-                    process.exit(128);
-                    throw new Error("Can't run DOWN for production");
-                }
-                runnerAction = new Down();
-                break;
+                throw new Error("Not implemented.");
 
             default:
                 console.log('\n');

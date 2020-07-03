@@ -1,9 +1,14 @@
 import Knex from "knex";
 import {ITenantSettings} from "../TenantsModel";
 import {RunnerAction} from "../RunnerAction";
+import {seedsOrdered} from "./Seeds";
 
-export class Down extends RunnerAction {
+export class Up extends RunnerAction {
     protected async _run(builder: Knex, tenantSettings: ITenantSettings): Promise<any> {
-        return builder.migrate.rollback({}, true);
+        for(let filePath of seedsOrdered) {
+            await builder.seed.run({
+                specific: filePath
+            })
+        }
     }
 }

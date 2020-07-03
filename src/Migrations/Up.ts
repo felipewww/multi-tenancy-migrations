@@ -1,8 +1,8 @@
 import Knex from "knex";
-import {Migrator} from "./Migrator";
 import {ITenantSettings} from "../TenantsModel";
+import {RunnerAction} from "../RunnerAction";
 
-export class Up extends Migrator {
+export class Up extends RunnerAction {
     constructor(
         private seeding?: boolean
     ) {
@@ -14,7 +14,7 @@ export class Up extends Migrator {
             return builder.migrate.latest()
                 .then(async () => {
                     if (this.seeding) {
-                        await builder.seed.run();
+                        let result = await builder.seed.run();
                     }
 
                     resolve();
