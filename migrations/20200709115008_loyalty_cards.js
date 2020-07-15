@@ -10,6 +10,12 @@ exports.up = function(knex) {
 
             table.integer('stamps_count')
 
+            table.date('valid_thru')
+
+            table.integer('usage_limit').nullable()
+
+            table.boolean('is_private')
+
             table.timestamps(true, true);
         })
 };
