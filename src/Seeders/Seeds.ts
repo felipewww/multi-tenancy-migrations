@@ -13,6 +13,7 @@ export const seedsOrdered = [
     'permission_into_group.js',
     'users.js',
     'user_has_module.js',
+    'customer_type.js'
 ];
 
 export class Seeds extends Runner {

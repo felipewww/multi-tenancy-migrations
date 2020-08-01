@@ -26,6 +26,8 @@ exports.up = function(knex) {
             table.dateTime('created_at').notNullable();
             table.dateTime('finished_at').nullable();
 
+            table.dateTime('last_stamp_at').notNullable();
+
             table.primary(['customer_id', 'loyalty_card_id']);
         })
 };

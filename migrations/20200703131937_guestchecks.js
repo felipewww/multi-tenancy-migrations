@@ -13,6 +13,7 @@ exports.up = function (knex) {
                 .onDelete('RESTRICT')
 
             table.timestamps(true, true);
+            table.dateTime('finished_at').nullable();
         })
 };
 

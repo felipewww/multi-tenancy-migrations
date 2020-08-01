@@ -1,11 +1,11 @@
 exports.up = function (knex) {
     return knex.schema
-        .createTable('sale_product', function (table) {
-            table.integer('product_id')
+        .createTable('sale_has_customer_type', function (table) {
+            table.integer('customer_type_id')
                 .unsigned()
                 .index()
                 .references('id')
-                .inTable('products')
+                .inTable('customer_types')
                 .notNullable()
                 .onDelete('CASCADE')
 
@@ -17,16 +17,11 @@ exports.up = function (knex) {
                 .notNullable()
                 .onDelete('CASCADE');
 
-            // table.boolean('status');
-
-            // table.decimal('price').nullable();
-
-            table.primary(['product_id', 'sale_id']);
+            table.primary(['customer_type_id', 'sale_id']);
         })
 
 };
 
 exports.down = function (knex) {
-    return knex.schema
-        .dropTable("sale_product")
+    return knex.schema.dropTable("sale_has_customer_type")
 };
