@@ -18,6 +18,10 @@ exports.up = function(knex) {
                 .notNullable()
                 .defaultTo(0)
 
+            // todo
+            // table.integer('max_usage_per_customer')
+            //     .nullable()
+
             table.boolean('status')
         })
 };

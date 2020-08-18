@@ -10,11 +10,11 @@ exports.up = function (knex) {
                 .notNullable()
                 .onDelete('CASCADE')
 
-            table.integer('guestcheck_id')
+            table.integer('invoice_id')
                 .unsigned()
                 .index()
                 .references('id')
-                .inTable('guestchecks')
+                .inTable('invoices')
                 .notNullable()
                 .onDelete('CASCADE')
 
@@ -24,7 +24,7 @@ exports.up = function (knex) {
 
             table.dateTime('created_at').notNullable();
 
-            table.primary(['customer_id', 'guestcheck_id']);
+            table.primary(['customer_id', 'invoice_id']);
         })
 };
 

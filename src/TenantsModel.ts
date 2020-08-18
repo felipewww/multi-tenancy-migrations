@@ -14,7 +14,7 @@ export class TenantsModel {
                         host : 'paylite-db',
                         user : 'root',
                         password : 'secret',
-                        database : 'paylite',
+                        database : 'promosimples',
                         port: 3306
                     }
                 },

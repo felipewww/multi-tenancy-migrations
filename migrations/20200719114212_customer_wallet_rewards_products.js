@@ -2,19 +2,8 @@ exports.up = function(knex) {
     return knex.schema
         .createTable('customer_wallet_rewards_products', function (table) {
             table.increments('id');
-            // table.integer('customer_cashback_from_id')
-            //     .unsigned()
-            //     .index()
-            //     .references('id')
-            //     .inTable('customer_cashback_from')
-            //     .notNullable()
-            //     .onDelete('RESTRICT')
 
-            // table.float('spent', 8.2).notNullable() //quanto gastou
-            // table.float('cashback', 8.2).notNullable() //quanto ganhou
-
-            // table.integer('foreign_key_id') //apenas referencia do guestcheck ou do loyalty card
-            table.integer('product_id') //apenas referencia do produto (se for guestcheck)
+            table.integer('product_id') //apenas referencia do produto (se for invoice)
 
             table.dateTime('created_at')
             table.dateTime('valid_thru')

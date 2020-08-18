@@ -1,6 +1,6 @@
 exports.up = function (knex) {
     return knex.schema
-        .createTable('sale_guestcheck', function (table) {
+        .createTable('sale_invoice', function (table) {
             table.increments('id');
             table.boolean('status');
 
@@ -23,5 +23,5 @@ exports.up = function (knex) {
 
 exports.down = function (knex) {
     return knex.schema
-        .dropTable("sale_guestcheck")
+        .dropTable("sale_invoice")
 };

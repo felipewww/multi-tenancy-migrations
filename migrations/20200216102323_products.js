@@ -12,7 +12,7 @@ exports.up = function(knex) {
         .index()
         .references('id')
         .inTable('product_categories')
-        .nullable()
+        // .nullable()
         .onDelete('SET NULL')
 
       table.timestamps(true, true);

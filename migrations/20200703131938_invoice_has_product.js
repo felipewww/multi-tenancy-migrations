@@ -1,6 +1,6 @@
 exports.up = function (knex) {
     return knex.schema
-        .createTable('guestcheck_has_product', function (table) {
+        .createTable('invoice_has_product', function (table) {
             table.boolean('status');
 
             table.decimal('price').nullable();
@@ -13,15 +13,15 @@ exports.up = function (knex) {
                 .notNullable()
                 .onDelete('RESTRICT')
 
-            table.integer('guestcheck_id')
+            table.integer('invoice_id')
                 .unsigned()
                 .index()
                 .references('id')
-                .inTable('guestchecks')
+                .inTable('invoices')
                 .notNullable()
                 .onDelete('RESTRICT')
 
-            // who added this pdt into guestcheck?
+            // who added this pdt into invoice?
             table.integer('user_id')
                 .unsigned()
                 .index()
@@ -34,12 +34,12 @@ exports.up = function (knex) {
 
             table.dateTime('created_at').notNullable();
 
-            table.primary(['product_id', 'guestcheck_id']);
+            table.primary(['product_id', 'invoice_id']);
         })
 
 };
 
 exports.down = function (knex) {
     return knex.schema
-        .dropTable("guestcheck_has_product")
+        .dropTable("invoice_has_product")
 };

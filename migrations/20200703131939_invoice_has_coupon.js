@@ -1,13 +1,13 @@
 
 exports.up = function(knex) {
     return knex.schema
-        .createTable('guestcheck_has_coupon', function (table) {
+        .createTable('invoice_has_coupon', function (table) {
 
-            table.integer('guestcheck_id')
+            table.integer('invoice_id')
                 .unsigned()
                 .index()
                 .references('id')
-                .inTable('guestchecks')
+                .inTable('invoices')
                 .notNullable()
                 .onDelete('CASCADE')
 
@@ -21,10 +21,10 @@ exports.up = function(knex) {
 
             table.dateTime('created_at').notNullable();
 
-            table.primary(['guestcheck_id', 'coupon_id']);
+            table.primary(['invoice_id', 'coupon_id']);
         })
 };
 
 exports.down = function(knex) {
-    return knex.schema.dropTable("guestcheck_has_coupon")
+    return knex.schema.dropTable("invoice_has_coupon")
 };
