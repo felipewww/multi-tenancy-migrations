@@ -13,7 +13,6 @@ export const seedsOrdered = [
     'permission_into_group.js',
     'users.js',
     'user_has_module.js',
-    'customer_types.js',
     'customers.js'
 ];
 

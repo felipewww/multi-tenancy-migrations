@@ -15,12 +15,12 @@ exports.up = function (knex) {
 
             table.float('account_balance', 8.2).defaultTo(0) //valor em conta de cashback
 
-            table.integer('customer_type_id')
-                .unsigned()
-                .index()
-                .references('id')
-                .inTable('customer_types')
-                .defaultTo(1)
+            // table.integer('customer_type_id')
+            //     .unsigned()
+            //     .index()
+            //     .references('id')
+            //     .inTable('customer_types')
+            //     .defaultTo(1)
                 // .nullable()
                 // .onDelete('SET NULL')
 

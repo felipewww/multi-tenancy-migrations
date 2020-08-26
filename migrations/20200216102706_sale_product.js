@@ -8,6 +8,7 @@ exports.up = function (knex) {
                 .inTable('products')
                 .notNullable()
                 .onDelete('CASCADE')
+                .unique()
 
             table.integer('sale_id')
                 .unsigned()

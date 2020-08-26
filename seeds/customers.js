@@ -11,7 +11,6 @@ exports.seed = function(knex) {
               password: '123',
               photo: 'asd',
               // account_balance: '',
-              customer_type_id: 1,
           }
       ]);
     });

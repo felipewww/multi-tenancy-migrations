@@ -5,8 +5,8 @@ exports.up = function(knex) {
             table.integer('fk');
 
             table.string('full_name');
-            table.integer('type_id');
-            table.string('type_title');
+            // table.integer('type_id');
+            // table.string('type_title');
             table.text('tags_ids').nullable();
             table.text('tags_titles').nullable();
 

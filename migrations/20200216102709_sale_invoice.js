@@ -9,13 +9,13 @@ exports.up = function (knex) {
             table.decimal('discount').nullable();
             table.decimal('minimum_amount').nullable();
 
-            table.integer('customer_type_id')
-                .unsigned()
-                .index()
-                .references('id')
-                .inTable('customer_types')
-                .nullable()
-                .onDelete('RESTRICT')
+            // table.integer('customer_type_id')
+            //     .unsigned()
+            //     .index()
+            //     .references('id')
+            //     .inTable('customer_types')
+            //     .nullable()
+            //     .onDelete('RESTRICT')
 
             table.timestamps(true, true);
         })
