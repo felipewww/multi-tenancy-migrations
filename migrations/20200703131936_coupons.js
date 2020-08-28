@@ -3,7 +3,7 @@ exports.up = function(knex) {
     return knex.schema
         .createTable('coupons', function (table) {
             table.increments('id');
-            table.string('title')
+            // table.string('title')
             table.text('icon')
             table.text('description')
             // table.string('color_text');
@@ -13,10 +13,11 @@ exports.up = function(knex) {
             table.date('valid_thru')
 
             table.integer('usage_limit').nullable()
-
             table.integer('usage_count')
                 .notNullable()
                 .defaultTo(0)
+
+            table.integer('customer_usage_limit').nullable()
 
             // todo
             // table.integer('max_usage_per_customer')
