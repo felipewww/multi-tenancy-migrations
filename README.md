@@ -20,3 +20,6 @@ $ npm pack
 $ npm i -g promo-migrations-1.0.0.tgz
 $ promo mgt
 ```
+
+O COMANDO CORRETO É
+node dist/cli.js mgt

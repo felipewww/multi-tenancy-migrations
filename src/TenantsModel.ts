@@ -11,10 +11,10 @@ export class TenantsModel {
             resolve([
                 {
                     connection: {
-                        host : 'paylite-db',
+                        host : 'promosimples-db',
                         user : 'root',
                         password : 'secret',
-                        database : 'promosimples',
+                        database : 'paylite',
                         port: 3306
                     }
                 },

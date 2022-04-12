@@ -13,7 +13,7 @@ export abstract class RunnerAction {
         return this._run(builder, tenantSettings)
     }
 
-    protected abstract async _run(builder: Knex, tenantSettings: ITenantSettings): Promise<any>;
+    protected abstract _run(builder: Knex, tenantSettings: ITenantSettings): Promise<any>;
 
     public static makeTenantBuilder(tenant: ITenantSettings): Knex {
         return Knex({

@@ -6,7 +6,7 @@ module.exports = {
             database: 'paylite',
             user: 'root',
             password: 'secret',
-            host: 'paylite-db',
+            host: 'promosimples-db',
             port: '3306'
         },
         pool: {

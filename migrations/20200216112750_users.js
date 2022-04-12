@@ -12,8 +12,8 @@ exports.up = function (knex) {
                 .index()
                 .references('id')
                 .inTable('permissions_groups')
-                // .nullable()
                 .onDelete('RESTRICT')
+                .onUpdate('cascade')
         })
 };
 
