@@ -1,6 +1,6 @@
 exports.up = function (knex) {
     return knex.schema
-        .createTable('sale_discount_from_unity', function (table) {
+        .createTable('sale_discount', function (table) {
             table.integer('sale_id')
                 .unique()
                 .unsigned()
@@ -10,9 +10,10 @@ exports.up = function (knex) {
                 .notNullable()
                 .onDelete('CASCADE')
 
+            table.primary(['sale_id'])
+
             table.integer('discount');
             table.enum('type', [1,2]) // percent or value
-            table.integer('from_unity');
 
             table.timestamps(true, true);
         })

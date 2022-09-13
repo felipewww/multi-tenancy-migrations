@@ -6,10 +6,12 @@ exports.up = function (knex) {
             table.boolean('status').notNullable();
             table.text('icon').notNullable();
 
-            table.integer('cashback').nullable();
-            table.integer('discount').nullable();
+            // table.integer('cashback').nullable();
+            // table.integer('discount').nullable();
 
             table.timestamps(true, true);
+            table.dateTime('deleted_at')
+                .nullable()
         })
 };
 

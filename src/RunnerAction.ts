@@ -3,11 +3,21 @@ import {ITenantSettings} from "./TenantsModel";
 
 export abstract class RunnerAction {
     async run(builder: Knex, tenantSettings: ITenantSettings): Promise<any> {
+
+
+
         const msg = 'running ' + this.constructor.name;
         console.log(msg.green.bold)
 
         if ("database" in tenantSettings.connection) {
-            console.log('for tenant ' + tenantSettings.connection.database)
+            console.log('for tenant:::: ' + tenantSettings.connection.database)
+
+            // const e = await builder.raw(
+            //     `select schema_name FROM information_schema.schemata WHERE schema_name = ${tenantSettings.connection.database}`
+            // )
+
+            // console.log('e??????????????????')
+            // console.log(e)
         }
 
         return this._run(builder, tenantSettings)

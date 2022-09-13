@@ -18,10 +18,6 @@ exports.up = function (knex) {
                 .notNullable()
                 .onDelete('CASCADE');
 
-            // table.boolean('status');
-
-            // table.decimal('price').nullable();
-
             table.primary(['product_id', 'sale_id']);
         })
 

@@ -1,7 +1,7 @@
 exports.up = function (knex) {
     return knex.schema
         .createTable('invoice_has_product', function (table) {
-            table.boolean('status');
+            // table.boolean('status');
 
             table.decimal('price').nullable();
 
@@ -18,15 +18,6 @@ exports.up = function (knex) {
                 .index()
                 .references('id')
                 .inTable('invoices')
-                .notNullable()
-                .onDelete('RESTRICT')
-
-            // who added this pdt into invoice?
-            table.integer('user_id')
-                .unsigned()
-                .index()
-                .references('id')
-                .inTable('users')
                 .notNullable()
                 .onDelete('RESTRICT')
 

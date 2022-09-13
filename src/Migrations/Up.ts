@@ -17,7 +17,7 @@ export class Up extends RunnerAction {
                         let result = await builder.seed.run();
                     }
 
-                    resolve();
+                    resolve({status: true});
                 })
 
         })

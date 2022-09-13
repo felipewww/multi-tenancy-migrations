@@ -11,6 +11,7 @@ exports.up = function (knex) {
                 .onDelete('CASCADE')
 
             table.integer('discount');
+            table.enum('type', [1,2]) // percent or value
             table.integer('at_unity');
 
             table.timestamps(true, true);
