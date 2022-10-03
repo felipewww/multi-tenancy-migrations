@@ -23,6 +23,8 @@ exports.up = function(knex) {
             //valor em percentual de desconto
             table.float('reward_discount', 8, 2).nullable();
 
+            table.float('reward_product', 8, 2).nullable();
+
             table.timestamps(true, true);
         })
 

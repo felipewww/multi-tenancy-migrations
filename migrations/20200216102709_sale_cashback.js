@@ -18,5 +18,5 @@ exports.up = function (knex) {
 };
 
 exports.down = function (knex) {
-    return knex.schema.dropTable("sale_discount_from_unity")
+    return knex.schema.dropTable("sale_cashback")
 };

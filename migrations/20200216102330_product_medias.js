@@ -4,13 +4,16 @@ exports.up = function (knex) {
             table.increments('id');
             table.text('src').notNullable();
 
+            table.string('ext', 10).notNullable()
+
             table.integer('product_id')
                 .unsigned()
                 .index()
                 .references('id')
                 .inTable('products')
-                .nullable()
+                .notNullable()
                 .onDelete('CASCADE')
+                .onUpdate('CASCADE')
         })
 };
 

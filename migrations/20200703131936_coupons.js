@@ -6,10 +6,12 @@ exports.up = function(knex) {
             // table.string('title')
             table.text('icon')
             table.text('description')
+            table.enum('type', [1,2]) // COMMON or CASHBACK
             // table.string('color_text');
             // table.string('color_bg');
             table.string('code');
             table.integer('discount');
+            table.enum('discount_type', [1,2]) // percent or value
             table.date('valid_thru')
 
             table.integer('usage_limit').nullable()

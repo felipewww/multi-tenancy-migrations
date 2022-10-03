@@ -3,7 +3,7 @@ exports.up = function (knex) {
         .createTable('invoice_has_product', function (table) {
             // table.boolean('status');
 
-            table.decimal('price').nullable();
+            // table.decimal('price').nullable();
 
             table.integer('product_id')
                 .unsigned()
@@ -11,7 +11,7 @@ exports.up = function (knex) {
                 .references('id')
                 .inTable('products')
                 .notNullable()
-                .onDelete('RESTRICT')
+                .onDelete('CASCADE')
 
             table.integer('invoice_id')
                 .unsigned()
@@ -19,7 +19,16 @@ exports.up = function (knex) {
                 .references('id')
                 .inTable('invoices')
                 .notNullable()
-                .onDelete('RESTRICT')
+                .onDelete('CASCADE')
+
+            table.integer('cashier_id')
+                .unsigned()
+                .index()
+                .references('id')
+                .inTable('users')
+                .nullable()
+                .onDelete('SET NULL')
+                .onUpdate('CASCADE')
 
             table.integer('qtty');
 
