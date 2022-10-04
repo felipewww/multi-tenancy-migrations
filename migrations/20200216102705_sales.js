@@ -4,10 +4,15 @@ exports.up = function (knex) {
             table.increments('id');
             table.string('title', 45).notNullable();
             table.boolean('status').notNullable();
-            table.text('icon').notNullable();
 
-            // table.integer('cashback').nullable();
-            // table.integer('discount').nullable();
+            table.integer('icon_id')
+                .unsigned()
+                .index()
+                .references('id')
+                .inTable('sale_icons')
+                .nullable()
+                .onDelete('SET NULL')
+                .onUpdate('CASCADE')
 
             table.timestamps(true, true);
             table.dateTime('deleted_at')

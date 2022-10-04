@@ -4,6 +4,7 @@ exports.up = function (knex) {
             table.increments('id');
             table.text('src').notNullable();
 
+            table.text('storage_path').notNullable()
             table.string('ext', 10).notNullable()
 
             table.integer('product_id')
